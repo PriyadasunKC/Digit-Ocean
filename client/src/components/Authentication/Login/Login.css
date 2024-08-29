@@ -1,0 +1,135 @@
+.container1 {
+  background-color: #f9f0ff;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  height: 60%;
+  width: 35%;
+  background-color: white;
+  opacity: 0.9;
+  border-radius: 20px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.LoginTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  margin-bottom: 2vh;
+}
+
+.LoginContent {
+  width: 70%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.LoginForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.FormInput {
+  height: 40px;
+}
+
+.formContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
+  margin-bottom: 2vh;
+}
+
+.Links {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.form-group > a {
+  text-decoration: none;
+  color: #6c63ff;
+  font-size: 0.9rem;
+}
+
+.LoginForm > *:nth-child(4) {
+  margin-top: 3vh;
+  height: 45px;
+}
+
+.LoginLogo {
+  display: block;
+  width: 15%;
+    height: 100%;
+    margin: auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .container1 {
+    background-color: white;
+  }
+
+  .content {
+    width: 90vw;
+    height: 90vh;
+    border-radius: 0;
+    shadow: none;
+    box-shadow: none;
+    background-color: white;
+  }
+
+  .LoginTitle {
+    font-size: 1rem;
+  }
+
+  .LoginContent {
+    width: 90%;
+  }
+
+  .formContainer {
+    gap: 3vh;
+  }
+
+  .LoginLogo {
+    display: block;
+    width: 35%;
+    height: 75%;
+    margin: auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .LoginForm > *:nth-child(4) {
+  height: 40px;
+}
+}
+
