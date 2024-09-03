@@ -9,6 +9,7 @@ import ForgetPassword from "./components/Authentication/ForgetPassword/ForgetPas
 import Otp from "./components/Authentication/OTP/OTP";
 import ResetPassword from "./components/Authentication/ResetPassword/ResetPassword";
 import Cart from "./components/Cart/Cart";
+import MyProfile from "./components/MyProfile/MyProfile";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -44,6 +45,9 @@ function App() {
         </Routes>
         <Routes>
           <Route path="/cart" element={<Cart />} />
+        </Routes>
+        <Routes>
+          <Route path="/my-profile" element={<MyProfile />} />
         </Routes>
       </BrowserRouter>
     </>
