@@ -10,32 +10,31 @@ const MyOrders = () => {
     {
       id: "123456",
       date: "2023-10-26",
-      items: ["Product A"],
+      items: ["60,000 Adobe Lightroom Presets"],
       total: 45.99,
-      status: "Delivered", // Added status for demonstration
     },
     {
       id: "789012",
       date: "2023-10-20",
-      items: ["Product C"],
+      items: ["T-Shirt Designs"],
       total: 12.5,
-      status: "Processing",
     },
     {
       id: "345678",
       date: "2023-10-15",
-      items: ["Product D", "Product E", "Product F"],
+      items: [
+        "Adobe After Effects Templates",
+        "20GB Royalty Stock Images",
+        "2500+ Royalty Free Stock Video Footage",
+      ],
       total: 75.25,
-      status: "Shipped",
     },
     {
       id: "901234",
       date: "2023-10-10",
-      items: ["Product G", "Product H"],
+      items: ["1000+ Mix Wallpapers Pack"],
       total: 32.0,
-      status: "Delivered",
     },
-    // Add more order data to test pagination...
   ]);
 
   const [searchTerm, setSearchTerm] = useState("");
@@ -45,12 +44,12 @@ const MyOrders = () => {
 
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
-    setCurrentPage(1); // Reset to page 1 when searching
+    setCurrentPage(1); 
   };
 
   const handleDateChange = (event) => {
     setSelectedDate(event.target.value);
-    setCurrentPage(1); // Reset to page 1 when filtering by date
+    setCurrentPage(1); 
   };
 
   const filteredOrders = orders.filter((order) => {
@@ -113,16 +112,21 @@ const MyOrders = () => {
                       <strong>Items:</strong>{" "}
                       {order.items.map((item, index) => (
                         <span key={index}>
-                          <Link to={`/products/${item}`}>{item}</Link>
+                          <Link
+                            style={{
+                              textDecoration: "none",
+                              color: "black",
+                            }}
+                            to={`/products/${item}`}
+                          >
+                            {item}
+                          </Link>
                           {index < order.items.length - 1 && ", "}
                         </span>
                       ))}
                     </p>
                     <p>
                       <strong>Total:</strong> ${order.total}
-                    </p>
-                    <p>
-                      <strong>Status:</strong> {order.status}
                     </p>
                   </div>
                 </Card.Body>

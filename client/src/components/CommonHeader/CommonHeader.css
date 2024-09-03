@@ -1,0 +1,47 @@
+.DesktopCart {
+  display: block;
+}
+
+.MobileCart {
+  display: none;
+}
+
+.DesktopProfile {
+  display: block;
+}
+
+.MobileProfile {
+  display: none !important;
+}
+.DesktopSignIn {
+  display: block;
+}
+
+.MobileSignIn {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .DesktopCart {
+    display: none;
+  }
+
+  .MobileCart {
+    display: block;
+  }
+  .DesktopProfile {
+    display: none !important;
+  }
+
+  .MobileProfile {
+    display: block !important;
+  }
+
+  .DesktopSignIn {
+    display: none !important;
+  }
+
+  .MobileSignIn {
+    display: block !important; ;
+  }
+}

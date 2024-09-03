@@ -79,3 +79,28 @@
 .order-details {
     text-align: left;
 }
+
+@media screen and (max-width: 768px) {
+  .SearchContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 18vh;
+  }
+
+  .SearchContainer1 {
+    width: 85%;
+    background-color: transparent;
+    margin-top: 1vh;
+    display: flex;
+  }
+
+  .OrderBody {
+    margin-top: 20vh;
+    padding: 0 !important;
+  }
+
+  .OrderCard {
+   
+  }
+}

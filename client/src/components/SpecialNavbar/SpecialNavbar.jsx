@@ -1,10 +1,20 @@
 import React from "react";
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import { Avatar, Badge, Space } from "antd";
+import "./SpecialNavbar.css";
+
+import {
+  UserOutlined,
+  SettingOutlined,
+  LogoutOutlined,
+} from "@ant-design/icons";
 
 
 const SpecialNavbar = ({ children }) => {
+  const [src, setSrc] = React.useState(null);
+  const [imageError, setImageError] = React.useState(false);
   const [searchQuery, setSearchQuery] = React.useState("");
+
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
   };
@@ -12,6 +22,12 @@ const SpecialNavbar = ({ children }) => {
     e.preventDefault();
     console.log(searchQuery);
   };
+
+  const handleImageError = () => {
+    setImageError(true);
+  };
+
+  
 
   return (
     <div>
@@ -148,7 +164,7 @@ const SpecialNavbar = ({ children }) => {
                   </a>
                 </li>
 
-                <li className="nav-item dropdown">
+                <li className="nav-item dropdown DesktopProfile">
                   <a
                     href="#"
                     className="nav-link dropdown-toggle"
@@ -157,7 +173,33 @@ const SpecialNavbar = ({ children }) => {
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    Sign In / Register
+                    <div
+                      style={{
+                        width: "34px",
+                        height: "34px",
+                        borderRadius: "50%",
+                        overflow: "hidden",
+                        display: "inline-flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        backgroundColor: "#f0f0f0",
+                      }}
+                    >
+                      {src && !imageError ? (
+                        <img
+                          src={src}
+                          alt="Avatar"
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover",
+                          }}
+                          onError={handleImageError}
+                        />
+                      ) : (
+                        <UserOutlined size={34} color="#999" />
+                      )}
+                    </div>
                   </a>
                   <ul
                     className="dropdown-menu"
@@ -174,19 +216,89 @@ const SpecialNavbar = ({ children }) => {
                       </a>
                     </li>
                     <li>
+                      <a className="dropdown-item" href="/my-profile">
+                        My Profile
+                      </a>
+                    </li>
+                    <li>
                       <a className="dropdown-item" href="/my-orders">
                         My Orders
                       </a>
                     </li>
                   </ul>
                 </li>
-                <li className="">
+                <li className="nav-item dropdown MobileProfile">
+                  <a
+                    href="#"
+                    className="nav-link dropdown-toggle"
+                    id="categoriesDropdown"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <a
+                      href="/categories"
+                      className="btn btn-primary btn-md"
+                      style={{
+                        backgroundColor: "#b37feb",
+                        borderColor: "#b37feb",
+                        width: "150px",
+                      }}
+                    >
+                      <UserOutlined className="me-1" /> Profile
+                    </a>
+                  </a>
+                  <ul
+                    className="dropdown-menu"
+                    aria-labelledby="categoriesDropdown"
+                  >
+                    <li className="mb-2 mt-2 p-2 DesktopSignIn">
+                      <a className="dropdown-item signIn" href="/login">
+                        Sign In
+                      </a>
+                    </li>
+                    <li className="MobileSignIn">
+                      <a className="dropdown-item" href="/login">
+                        Sign in
+                      </a>
+                    </li>
+                    <li>
+                      <a className="dropdown-item" href="/register">
+                        Register
+                      </a>
+                    </li>
+                    <li>
+                      <a className="dropdown-item" href="/my-profile">
+                        My Profile
+                      </a>
+                    </li>
+                    <li>
+                      <a className="dropdown-item" href="/my-orders">
+                        My Orders
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li className="DesktopCart">
                   <a href="/cart" className="nav-link">
                     <Space size={24}>
                       <Badge count={1}>
                         <Avatar shape="round" icon={<ShoppingCartOutlined />} />
                       </Badge>
                     </Space>
+                  </a>
+                </li>
+                <li className="MobileCart">
+                  <a
+                    href="/cart"
+                    className="btn btn-primary btn-md mt-2"
+                    style={{
+                      backgroundColor: "#b37feb",
+                      borderColor: "#b37feb",
+                    }}
+                  >
+                    <ShoppingCartOutlined className="me-2" />
+                    Shopping Cart
                   </a>
                 </li>
               </ul>

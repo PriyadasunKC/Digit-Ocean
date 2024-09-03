@@ -1,0 +1,25 @@
+.DesktopCart {
+    display: block;
+}
+
+.MobileCart {
+    display: none;
+}
+
+.DesktopProfile {
+    display: block;
+}
+
+.MobileProfile {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .DesktopCart {
+        display: none;
+    }
+
+    .MobileCart {
+        display: block;
+    }
+}

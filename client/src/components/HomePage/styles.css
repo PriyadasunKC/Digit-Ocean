@@ -73,8 +73,6 @@ header {
   transition: background-color 0.3s ease;
 }
 
-
-
 .btnSearch:hover {
   background-color: #b88de0;
 }
@@ -101,6 +99,11 @@ header {
   display: flex;
   gap: 10px;
   flex-direction: row; 
+}
+
+
+.Profile:hover {
+  border: none;
 }
 
 @media (min-width: 768px) {
