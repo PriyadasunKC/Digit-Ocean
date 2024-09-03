@@ -181,7 +181,7 @@ const SpecialNavbar = ({ children }) => {
                   </ul>
                 </li>
                 <li className="">
-                  <a href="/" className="nav-link">
+                  <a href="/cart" className="nav-link">
                     <Space size={24}>
                       <Badge count={1}>
                         <Avatar shape="round" icon={<ShoppingCartOutlined />} />

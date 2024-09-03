@@ -1,6 +1,5 @@
-
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import HomePage from "./components/HomePage/HomePage"
+import HomePage from "./components/HomePage/HomePage";
 import CommonHeader from "./components/CommonHeader/CommonHeader";
 import Categories from "./components/Categories/Categories";
 import Login from "./components/Authentication/Login/Login";
@@ -9,13 +8,10 @@ import MyOrders from "./components/MyOrders/MyOrders";
 import ForgetPassword from "./components/Authentication/ForgetPassword/ForgetPassword";
 import Otp from "./components/Authentication/OTP/OTP";
 import ResetPassword from "./components/Authentication/ResetPassword/ResetPassword";
+import Cart from "./components/Cart/Cart";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-
-
-import "bootstrap/dist/css/bootstrap.min.css"; 
 function App() {
-
-
   return (
     <>
       <BrowserRouter>
@@ -46,9 +42,12 @@ function App() {
         <Routes>
           <Route path="/reset-password" element={<ResetPassword />} />
         </Routes>
+        <Routes>
+          <Route path="/cart" element={<Cart />} />
+        </Routes>
       </BrowserRouter>
     </>
   );
 }
 
-export default App
+export default App;
